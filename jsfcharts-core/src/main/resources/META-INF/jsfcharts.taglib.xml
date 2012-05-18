@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facelet-taglib version="2.0"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+   http://java.sun.com/xml/ns/javaee/web-facelettaglibary_2_0.xsd">
+	<namespace>http://everythingiswrong.org/jsfcharts</namespace>
+	<tag>
+		<tag-name>chart</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.Chart</component-type>
+			<renderer-type>org.everythingiswrong.jsf.chart.Chart</renderer-type>
+		</component>
+		<attribute>
+			<description><![CDATA[Unique identifier of the component in a namingContainer.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The default series type for the chart. Can be one of line, spline, area, areaspline, column, bar, pie and scatter. Defaults to "line".]]></description>
+			<name>type</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An explicit width for the chart. By default the width is calculated from the offset width of the containing element. Defaults to null.]]></description>
+			<name>width</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An explicit height for the chart. By default the height is calculated from the offset height of the containing element. Defaults to null.]]></description>
+			<name>Height</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The margin between the top outer edge of the chart and the plot area. Use this to set a fixed pixel value for the margin as opposed to the default dynamic margin. See also spacingTop. Defaults to null.]]></description>
+			<name>marginTop</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The margin between the right outer edge of the chart and the plot area. Use this to set a fixed pixel value for the margin as opposed to the default dynamic margin. See also spacingRight. Defaults to 50.]]></description>
+			<name>marginRight</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The margin between the top outer edge of the chart and the plot area. Use this to set a fixed pixel value for the margin as opposed to the default dynamic margin. See also spacingTop. Defaults to null.]]></description>
+			<name>marginBottom</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The margin between the left outer edge of the chart and the plot area. Use this to set a fixed pixel value for the margin as opposed to the default dynamic margin. See also spacingLeft. Defaults to 80.]]></description>
+			<name>marginLeft</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>series</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.Series</component-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>serie</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.Serie</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[Name of the serie to display.]]></description>
+			<name>label</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[.]]></description>
+			<name>value</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>title</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.Title</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[The horizontal alignment of the title. Can be one of "left", "center" and "right". Defaults to "center".]]></description>
+			<name>align</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[When the title is floating, the plot area will not move to make space for it. Defaults to false.]]></description>
+			<name>floating</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The margin between the title and the plot area, or if a subtitle is present, the margin between the subtitle and the plot area. Defaults to 15.]]></description>
+			<name>margin</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The title of the chart. To disable the title, set the text to null. Defaults to "Chart title".]]></description>
+			<name>text</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[CSS styles for the title. Use this for font styling, but use align, x and yfor text alignment. Defaults to:
+
+{
+	color: '#3E576F',
+	fontSize: '16px'
+}]]></description>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The vertical alignment of the title. Can be one of "top", "middle" and "bottom". Defaults to "top".]]></description>
+			<name>verticalAlign</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight. Defaults to 0.]]></description>
+			<name>x</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The y position of the title relative to the alignment within chart.spacingTop and chart.spacingBottom. Defaults to 15.]]></description>
+			<name>y</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>subtitle</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.Subtitle</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[The horizontal alignment of the title. Can be one of "left", "center" and "right". Defaults to "center".]]></description>
+			<name>align</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[When the title is floating, the plot area will not move to make space for it. Defaults to false.]]></description>
+			<name>floating</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The title of the chart. To disable the title, set the text to null. Defaults to "Chart title".]]></description>
+			<name>text</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[CSS styles for the title. Use this for font styling, but use align, x and yfor text alignment. Defaults to:
+
+{
+	color: '#3E576F',
+	fontSize: '16px'
+}]]></description>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The vertical alignment of the title. Can be one of "top", "middle" and "bottom". Defaults to "top".]]></description>
+			<name>verticalAlign</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight. Defaults to 0.]]></description>
+			<name>x</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The y position of the title relative to the alignment within chart.spacingTop and chart.spacingBottom. Defaults to 15.]]></description>
+			<name>y</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>credits</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.Credit</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[Whether to show the credits text. Defaults to true.]]></description>
+			<name>enabled</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Position configuration for the credtis label. Supported properties are align, verticalAlign, x and y. Defaults to
+
+position: {
+	align: 'right',
+	x: -10,
+	verticalAlign: 'bottom',
+	y: -5
+}]]></description>
+			<name>position</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The URL for the credits label. Defaults to "http://www.highcharts.com".]]></description>
+			<name>href</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[CSS styles for the credits label. Defaults to:
+
+itemStyle: {
+	cursor: 'pointer',
+	color: '#909090',
+	fontSize: '10px'
+
+}]]></description>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The text for the credits label. Defaults to "Highcharts.com".]]></description>
+			<name>text</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+		<tag>
+		<tag-name>xAxis</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.xAxis</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[Whether to allow decimals in this axis' ticks. When counting integers, like persons or hits on a web page, decimals must be avoided in the axis tick labels. Defaults to true.]]></description>
+			<name>allowDecimals</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[When using an alternate grid color, a band is painted across the plot area between every other grid line. Defaults to null.]]></description>
+			<name>alternateGridColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[If categories are present for the xAxis, names are used instead of numbers for that axis. Example:
+
+categories: ['Apples', 'Bananas', 'Oranges']
+
+Defaults to [].]]></description>
+			<name>categories</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[For a datetime axis, the scale will automatically adjust to the appropriate unit. This member gives the default string representations used for each unit. For an overview of the replacement codes, see dateFormat. Defaults to:
+
+{
+	second: '%H:%M:%S',
+	minute: '%H:%M',
+	hour: '%H:%M',
+	day: '%e. %b',
+	week: '%e. %b',
+	month: '%b \'%y',
+	year: '%Y'
+}]]></description>
+			<name>dateTimeLabelFormats</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to force the axis to end on a tick. Use this option with the maxPadding option to control the axis end. Defaults to false.]]></description>
+			<name>endOnTick</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Color of the grid lines extending the ticks across the plot area. Defaults to "#C0C0C0".]]></description>
+			<name>gridLineColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The dash or dot style of the grid lines. For possible values, see this demonstration. Defaults to Solid.]]></description>
+			<name>gridLineDashStyle</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width of the grid lines extending the ticks across the plot area. Defaults to 0.]]></description>
+			<name>gridLineWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The color of the line marking the axis itself. Defaults to "#C0D0E0".]]></description>
+			<name>lineColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width of the line marking the axis itself. Defaults to 1.]]></description>
+			<name>lineWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Color of the minor, secondary grid lines. Defaults to #E0E0E0.]]></description>
+			<name>minorGridLineColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The dash or dot style of the minor grid lines. For possible values, see this demonstration. Defaults to Solid.]]></description>
+			<name>minorGridLineDashStyle</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Width of the minor, secondary grid lines. Defaults to 1.]]></description>
+			<name>minorGridLineWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Color for the minor tick marks. Defaults to #A0A0A0.]]></description>
+			<name>minorTickColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Tick interval in scale units for the minor ticks. On a linear axis, if "auto", the minor tick interval is calculated as a fifth of the tickInterval. If null, minor ticks are not shown.
+
+On logarithmic axes, the unit is the power of the value. For example, setting the minorTickInterval to 1 puts one tick on each of 0.1, 1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticks between 1 and 10, 10 and 100 etc. A minorTickInterval of "auto" on a log axis results in a best guess, attempting to enter approximately 5 minor ticks between each major tick.
+Defaults to null.]]></description>
+			<name>minorTickInterval</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The pixel length of the minor tick marks. Defaults to 2.]]></description>
+			<name>minorTickLength</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The position of the minor tick marks relative to the axis line. Can be one of inside and outside. Defaults to outside.]]></description>
+			<name>minorTickPosition</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The pixel width of the minor tick mark. Defaults to 0.]]></description>
+			<name>minorTickWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The distance in pixels from the plot area to the axis line. A positive offset moves the axis with it's line, labels and ticks away from the plot area. This is typically used when two or more axes are displayed on the same side of the plot. Defaults to 0.]]></description>
+			<name>offset</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to display the axis on the opposite side of the normal. The normal is on the left side for vertical axes and bottom for horizontal, so the opposite sides will be right and top respectively. This is typically used with dual or multiple axes. Defaults to false.]]></description>
+			<name>opposite</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to reverse the axis so that the highest number is closest to origo. If the chart is inverted, the x axis is reversed by default. Defaults to false.]]></description>
+			<name>reversed</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to show the first tick label. Defaults to true.]]></description>
+			<name>showFirstLabel</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to show the last tick label. Defaults to false.]]></description>
+			<name>showLastLabel</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[For datetime axes, this decides where to put the tick between weeks. 0 = Sunday, 1 = Monday. Defaults to 1.]]></description>
+			<name>startOfWeek</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to force the axis to start on a tick. Use this option with the maxPadding option to control the axis start. Defaults to false.]]></description>
+			<name>startOnTick</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Color for the main tick marks. Defaults to #C0D0E0.]]></description>
+			<name>tickColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The interval of the tick marks in axis units. When null, the tick interval is computed to approximately follow the tickPixelInterval on linear and datetime axes. On categorized axes, a null tickInterval will default to 1, one category. Note that datetime axes are based on milliseconds, so for example an interval of one day is expressed as 24 * 3600 * 1000.
+
+On logarithmic axes, the tickInterval is based on powers, so a tickInterval of 1 means one tick on each of 0.1, 1, 10, 100 etc. A tickInterval of 2 means a tick of 0.1, 10, 1000 etc. A tickInterval of 0.2 puts a tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 etc.
+Defaults to null.]]></description>
+			<name>tickInterval</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The pixel length of the main tick marks. Defaults to 5.]]></description>
+			<name>tickLength</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[For categorized axes only. If "on" the tick mark is placed in the center of the category, if "between" the tick mark is placed between categories. Defaults to "between".]]></description>
+			<name>tickmarkPlacement</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[If tickInterval is null this option sets the approximate pixel interval of the tick marks. Not applicable to categorized axis. Defaults to 72 for the Y axis and 100 for the X axis.]]></description>
+			<name>tickPixelInterval</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The pixel width of the major tick marks. Defaults to 1.]]></description>
+			<name>tickPosition</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>yAxis</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.yAxis</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[Whether to allow decimals in this axis' ticks. When counting integers, like persons or hits on a web page, decimals must be avoided in the axis tick labels. Defaults to true.]]></description>
+			<name>allowDecimals</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[When using an alternate grid color, a band is painted across the plot area between every other grid line. Defaults to null.]]></description>
+			<name>alternateGridColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[If categories are present for the xAxis, names are used instead of numbers for that axis. Example:
+
+categories: ['Apples', 'Bananas', 'Oranges']
+
+Defaults to [].]]></description>
+			<name>categories</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[For a datetime axis, the scale will automatically adjust to the appropriate unit. This member gives the default string representations used for each unit. For an overview of the replacement codes, see dateFormat. Defaults to:
+
+{
+	second: '%H:%M:%S',
+	minute: '%H:%M',
+	hour: '%H:%M',
+	day: '%e. %b',
+	week: '%e. %b',
+	month: '%b \'%y',
+	year: '%Y'
+}]]></description>
+			<name>dateTimeLabelFormats</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to force the axis to end on a tick. Use this option with the maxPadding option to control the axis end. Defaults to false.]]></description>
+			<name>endOnTick</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Color of the grid lines extending the ticks across the plot area. Defaults to "#C0C0C0".]]></description>
+			<name>gridLineColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The dash or dot style of the grid lines. For possible values, see this demonstration. Defaults to Solid.]]></description>
+			<name>gridLineDashStyle</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width of the grid lines extending the ticks across the plot area. Defaults to 0.]]></description>
+			<name>gridLineWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The color of the line marking the axis itself. Defaults to "#C0D0E0".]]></description>
+			<name>lineColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width of the line marking the axis itself. Defaults to 1.]]></description>
+			<name>lineWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Color of the minor, secondary grid lines. Defaults to #E0E0E0.]]></description>
+			<name>minorGridLineColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The dash or dot style of the minor grid lines. For possible values, see this demonstration. Defaults to Solid.]]></description>
+			<name>minorGridLineDashStyle</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Width of the minor, secondary grid lines. Defaults to 1.]]></description>
+			<name>minorGridLineWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Color for the minor tick marks. Defaults to #A0A0A0.]]></description>
+			<name>minorTickColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Tick interval in scale units for the minor ticks. On a linear axis, if "auto", the minor tick interval is calculated as a fifth of the tickInterval. If null, minor ticks are not shown.
+
+On logarithmic axes, the unit is the power of the value. For example, setting the minorTickInterval to 1 puts one tick on each of 0.1, 1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticks between 1 and 10, 10 and 100 etc. A minorTickInterval of "auto" on a log axis results in a best guess, attempting to enter approximately 5 minor ticks between each major tick.
+Defaults to null.]]></description>
+			<name>minorTickInterval</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The pixel length of the minor tick marks. Defaults to 2.]]></description>
+			<name>minorTickLength</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The position of the minor tick marks relative to the axis line. Can be one of inside and outside. Defaults to outside.]]></description>
+			<name>minorTickPosition</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The pixel width of the minor tick mark. Defaults to 0.]]></description>
+			<name>minorTickWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The distance in pixels from the plot area to the axis line. A positive offset moves the axis with it's line, labels and ticks away from the plot area. This is typically used when two or more axes are displayed on the same side of the plot. Defaults to 0.]]></description>
+			<name>offset</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to display the axis on the opposite side of the normal. The normal is on the left side for vertical axes and bottom for horizontal, so the opposite sides will be right and top respectively. This is typically used with dual or multiple axes. Defaults to false.]]></description>
+			<name>opposite</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to reverse the axis so that the highest number is closest to origo. If the chart is inverted, the x axis is reversed by default. Defaults to false.]]></description>
+			<name>reversed</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to show the first tick label. Defaults to true.]]></description>
+			<name>showFirstLabel</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to show the last tick label. Defaults to false.]]></description>
+			<name>showLastLabel</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[For datetime axes, this decides where to put the tick between weeks. 0 = Sunday, 1 = Monday. Defaults to 1.]]></description>
+			<name>startOfWeek</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to force the axis to start on a tick. Use this option with the maxPadding option to control the axis start. Defaults to false.]]></description>
+			<name>startOnTick</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Color for the main tick marks. Defaults to #C0D0E0.]]></description>
+			<name>tickColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The interval of the tick marks in axis units. When null, the tick interval is computed to approximately follow the tickPixelInterval on linear and datetime axes. On categorized axes, a null tickInterval will default to 1, one category. Note that datetime axes are based on milliseconds, so for example an interval of one day is expressed as 24 * 3600 * 1000.
+
+On logarithmic axes, the tickInterval is based on powers, so a tickInterval of 1 means one tick on each of 0.1, 1, 10, 100 etc. A tickInterval of 2 means a tick of 0.1, 10, 1000 etc. A tickInterval of 0.2 puts a tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 etc.
+Defaults to null.]]></description>
+			<name>tickInterval</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The pixel length of the main tick marks. Defaults to 5.]]></description>
+			<name>tickLength</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[For categorized axes only. If "on" the tick mark is placed in the center of the category, if "between" the tick mark is placed between categories. Defaults to "between".]]></description>
+			<name>tickmarkPlacement</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[If tickInterval is null this option sets the approximate pixel interval of the tick marks. Not applicable to categorized axis. Defaults to 72 for the Y axis and 100 for the X axis.]]></description>
+			<name>tickPixelInterval</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The pixel width of the major tick marks. Defaults to 1.]]></description>
+			<name>tickPosition</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>legend</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.Legend</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[The horizontal alignment of the legend box within the chart area. Defaults to "center".]]></description>
+			<name>align</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The background color of the legend, filling the rounded corner border. Defaults to null.]]></description>
+			<name>backgroundColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The color of the drawn border around the legend. Defaults to #909090.]]></description>
+			<name>borderColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The border corner radius of the legend. Defaults to 5.]]></description>
+			<name>borderRadius</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width of the drawn border around the legend. Defaults to 1.]]></description>
+			<name>borderWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Enable or disable the legend. Defaults to true.]]></description>
+			<name>enabled</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[When the legend is floating, the plot area ignores it and is allowed to be placed below it. Defaults to false.]]></description>
+			<name>floating</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width for each legend item. This is useful in a horizontal layout with many items when you want the items to align vertically. Defaults to null.]]></description>
+			<name>itemWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The layout of the legend items. Can be one of "horizontal" or "vertical". Defaults to "horizontal".]]></description>
+			<name>layout</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to reverse the order of the legend items compared to the order of the series or points as defined in the configuration object. Defaults to false.]]></description>
+			<name>reversed</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to apply a drop shadow to the legend. A backgroundColor also needs to be applied for this to take effect. Defaults to false.]]></description>
+			<name>shadow</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[CSS styles for the legend area. In the 1.x versions the position of the legend area was determined by CSS. In 2.x, the position is determined by properties like align, verticalAlign, x and y, but the styles are still parsed for backwards compatibility.]]></description>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The vertical alignment of the legend box. Can be one of "top", "middle" or "bottom". Vertical position can be further determined by the y option. Defaults to "bottom".]]></description>
+			<name>verticalAlign</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width of the legend box, not including style.padding. Defaults to null.]]></description>
+			<name>width</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The x offset of the legend relative to it's horizontal alignment align within chart.spacingLeft and chart.spacingRight. Negative x moves it to the left, positive x moves it to the right. The default value of 15 together with align: "center" puts it in the center of the plot area. Defaults to 0.]]></description>
+			<name>x</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The vertical offset of the legend relative to it's vertical alignment verticalAlign within chart.spacingTop and chart.spacingBottom. Negative y moves it up, positive y moves it down. Defaults to 0.]]></description>
+			<name>y</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>tooltip</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.Tooltip</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[How many decimals to show in each series' y value. This is overridable in each series' tooltip options object. The default is to preserve all decimals.]]></description>
+			<name>valueDecimals</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A string to prepend to each series' y value. Overridable in each series' tooltip options object. Defaults to "".]]></description>
+			<name>valuePrefix</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A string to append to each series' y value. Overridable in each series' tooltip options object. Defaults to "".]]></description>
+			<name>valueSuffix</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[When the tooltip is shared, the entire plot area will capture mouse movement, and tooltip texts for all series will be shown in a single bubble. This is recommended for single series charts and for iPad optimized sites. Defaults to false.]]></description>
+			<name>shared</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>plotOptions</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.PlotOptions</component-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>seriesOptions</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.SeriesOptions</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[Allow this series' points to be selected by clicking on the markers, bars or pie slices. Defaults to false.]]></description>
+			<name>allowPointSelect</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>xlabels</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.XLabels</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[What part of the string the given position is anchored to. Can be one of "left", "center" or "right". In inverted charts, x axis label alignment and y axis alignment are swapped. Defaults to "center".]]></description>
+			<name>align</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Enable or disable the axis labels. Defaults to true.]]></description>
+			<name>enabled</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Rotation of the labels in degrees. Defaults to 0.]]></description>
+			<name>rotation</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Horizontal axes only. The number of lines to spread the labels over to make room or tighter labels. Defaults to null.]]></description>
+			<name>staggerLines</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[CSS styles for the label. Defaults to:
+
+style: {
+	color: '#6D869F',
+	fontWeight: 'bold'
+}
+			]]></description>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[To show only every n'th label on the axis, set the step to n. Setting the step to 2 shows every other label. Defaults to null.]]></description>
+			<name>step</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The x position offset of the label relative to the tick position on the axis. Defaults to 0.]]></description>
+			<name>x</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The y position offset of the label relative to the tick position on the axis. Defaults to 0.]]></description>
+			<name>y</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>dataLabels</tag-name>
+		<component>
+			<component-type>org.everythingiswrong.jsf.chart.DataLabels</component-type>
+		</component>
+		<attribute>
+			<description><![CDATA[What part of the string the given position is anchored to. Can be one of "left", "center" or "right". In inverted charts, x axis label alignment and y axis alignment are swapped. Defaults to "center".]]></description>
+			<name>align</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Enable or disable the axis labels. Defaults to true.]]></description>
+			<name>enabled</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Rotation of the labels in degrees. Defaults to 0.]]></description>
+			<name>rotation</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Horizontal axes only. The number of lines to spread the labels over to make room or tighter labels. Defaults to null.]]></description>
+			<name>staggerLines</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[CSS styles for the label. Defaults to:
+
+style: {
+	color: '#6D869F',
+	fontWeight: 'bold'
+}
+			]]></description>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[To show only every n'th label on the axis, set the step to n. Setting the step to 2 shows every other label. Defaults to null.]]></description>
+			<name>step</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The x position offset of the label relative to the tick position on the axis. Defaults to 0.]]></description>
+			<name>x</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The y position offset of the label relative to the tick position on the axis. Defaults to 0.]]></description>
+			<name>y</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The y position offset of the label relative to the tick position on the axis. Defaults to 0.]]></description>
+			<name>shadow</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+</facelet-taglib>

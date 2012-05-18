@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:e="http://example.com/test"
+   xmlns:jsfcharts="http://everythingiswrong.org/jsfcharts"
+   template="/WEB-INF/templates/default.xhtml">
+   <ui:define name="content">
+      <h:form id="bv">
+         
+         <jsfcharts:chart id="test" width="600" marginRight="130" marginBottom="25">
+         	<jsfcharts:title text="Monthly Average Temperature" />
+         	<jsfcharts:subtitle text="Source: WorldClimate.com" />
+         	<jsfcharts:xAxis categories="#{chartBean.abscisse}" />
+         	<jsfcharts:yAxis>
+         		<jsfcharts:title text="Temperature (&#730;C)" />
+         	</jsfcharts:yAxis>
+         	<jsfcharts:legend layout="vertical" align="right" verticalAlign="top" x="-10" y="100" borderWidth="0"/>
+         	<jsfcharts:tooltip valueSuffix="&#730;C" />
+         	<jsfcharts:series>
+	         	<jsfcharts:serie label="Tokyo" value="#{chartBean.tokyo}" />
+	         	<jsfcharts:serie label="New York" value="#{chartBean.newYork}" />
+	         	<jsfcharts:serie label="Berlin" value="#{chartBean.berlin}" />
+	         	<jsfcharts:serie label="London" value="#{chartBean.london}" />
+         	</jsfcharts:series>
+         	
+         	<jsfcharts:credits text="Yan Langlois" href="http://everythingiswrong.free.fr" />
+         </jsfcharts:chart>
+         
+         <jsfcharts:chart id="test2" width="600" marginRight="130" marginBottom="25">
+         	<jsfcharts:title text="Monthly Average Temperature" />
+         	<jsfcharts:subtitle text="Source: WorldClimate.com" />
+         	<jsfcharts:xAxis categories="#{chartBean.abscisse}" >
+         		<jsfcharts:xlabels style="color: '#0000FF';fontWeight: 'bold'" />
+         	</jsfcharts:xAxis>
+         	<jsfcharts:plotOptions>
+       			<jsfcharts:seriesOptions>
+        			<jsfcharts:dataLabels enabled="true" style="color: '#00FF00';fontWeight: 'bold'" />
+        		</jsfcharts:seriesOptions>
+       		</jsfcharts:plotOptions>
+         	<jsfcharts:yAxis>
+         		<jsfcharts:title text="Temperature (&#730;C)" />
+         	</jsfcharts:yAxis>
+         	<jsfcharts:legend layout="vertical" align="right" verticalAlign="top" x="-10" y="100" borderWidth="0"/>
+         	<jsfcharts:tooltip valueSuffix="&#730;C" />
+         	<jsfcharts:series>
+	         	<jsfcharts:serie label="Tokyo" value="#{chartBean.tokyo}" >
+	         	</jsfcharts:serie>
+	         	<jsfcharts:serie label="New York" value="#{chartBean.newYork}" />
+	         	<jsfcharts:serie label="Berlin" value="#{chartBean.berlin}" />
+	         	<jsfcharts:serie label="London" value="#{chartBean.london}" />
+         	</jsfcharts:series>
+         		
+         	<jsfcharts:credits text="Yan Langlois" href="http://everythingiswrong.free.fr" />
+         </jsfcharts:chart>
+         
+      </h:form>
+   </ui:define>
+</ui:composition>

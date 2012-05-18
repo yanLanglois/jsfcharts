@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:corejsf="http://corejsf.com">
+   <h:head>
+      <h:outputStylesheet library="css" name="styles.css"/>
+      <title>#{msgs.windowTitle}</title>
+   </h:head>
+
+   <h:body>
+      <h:form>
+         <h:outputText value="#{msgs.creditCardExpirationPrompt}"
+                       styleClass="pageTitle"/>
+         <p/>
+         <h:panelGrid columns="3">
+            #{msgs.monthPrompt}
+            <corejsf:spinner value="#{cardExpirationDate.month}"
+                  id="monthSpinner" minimum="1" maximum="12" size="3"
+                  valueChangeListener="#{cardExpirationDate.changeListener}"
+                  atMax="#{cardExpirationDate.incrementYear}" 
+                  atMin="#{cardExpirationDate.decrementYear}"/>
+            <h:message for="monthSpinner"/>
+            
+            #{msgs.yearPrompt}
+            <corejsf:spinner value="#{cardExpirationDate.year}"
+                  id="yearSpinner" minimum="1900" maximum="2100" size="5"
+                  valueChangeListener="#{cardExpirationDate.changeListener}"/>
+            <h:message for="yearSpinner"/>
+            
+            #{msgs.changes}
+            #{cardExpirationDate.changes}
+         </h:panelGrid>
+         <p/>
+         <h:commandButton value="#{msgs.nextButtonPrompt}" action="next"/>
+      </h:form>
+   </h:body>
+</html>
