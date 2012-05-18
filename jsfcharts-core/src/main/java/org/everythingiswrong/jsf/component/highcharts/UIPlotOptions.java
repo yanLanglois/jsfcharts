@@ -3,7 +3,6 @@ package org.everythingiswrong.jsf.component.highcharts;
 import java.io.IOException;
 
 import javax.faces.component.FacesComponent;
-import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 

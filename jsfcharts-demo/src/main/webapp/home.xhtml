@@ -28,6 +28,15 @@
          	<jsfcharts:credits text="Yan Langlois" href="http://everythingiswrong.free.fr" />
          </jsfcharts:chart>
          
+         <jsfcharts:chart id="Logarithmic">
+         	<jsfcharts:title text="Logarithmic axis demo"></jsfcharts:title>
+         	<jsfcharts:xAxis tickInterval="1"></jsfcharts:xAxis>
+         	<jsfcharts:yAxis type="logarithmic" minorTickInterval="0.1"></jsfcharts:yAxis>
+         	<jsfcharts:series>
+         		<jsfcharts:serie label="log" value="#{logarithmicBean.data}"></jsfcharts:serie>
+         	</jsfcharts:series>
+         </jsfcharts:chart>
+         
          <jsfcharts:chart id="test2" width="600" marginRight="130" marginBottom="25">
          	<jsfcharts:title text="Monthly Average Temperature" />
          	<jsfcharts:subtitle text="Source: WorldClimate.com" />

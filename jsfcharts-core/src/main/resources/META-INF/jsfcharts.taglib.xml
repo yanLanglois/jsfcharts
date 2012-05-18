@@ -456,6 +456,12 @@ Defaults to null.]]></description>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>
+		<attribute>
+			<description><![CDATA[The type of axis. Can be one of "linear", "logarithmic" or "datetime". In a datetime axis, the numbers are given in milliseconds, and tick marks are placed on appropriate values like full hours or days. Defaults to "linear".Try it: "linear", "datetime" with regular intervals, "datetime" with irregular intervals, "logarithmic", "logarithmic" with minor grid lines, "logarithmic" on two axes. ]]></description>
+			<name>type</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
 	</tag>
 	
 	<tag>
@@ -666,6 +672,12 @@ Defaults to null.]]></description>
 		<attribute>
 			<description><![CDATA[The pixel width of the major tick marks. Defaults to 1.]]></description>
 			<name>tickPosition</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The type of axis. Can be one of "linear", "logarithmic" or "datetime". In a datetime axis, the numbers are given in milliseconds, and tick marks are placed on appropriate values like full hours or days. Defaults to "linear".Try it: "linear", "datetime" with regular intervals, "datetime" with irregular intervals, "logarithmic", "logarithmic" with minor grid lines, "logarithmic" on two axes. ]]></description>
+			<name>type</name>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>

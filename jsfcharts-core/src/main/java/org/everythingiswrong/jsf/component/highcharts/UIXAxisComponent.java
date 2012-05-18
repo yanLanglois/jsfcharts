@@ -23,11 +23,10 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		allowDecimals, alternateGridColor, categories, dateTimeLabelFormats, endOnTick, gridLineColor, gridLineDashStyle, gridLineWidth, lineColor,
 		lineWidth,
 		//linkedTo, max, maxPadding,  min,
-		minorGridLineColor, minorGridLineWidth, minorTickColor,
-		//minorTickInterval, minorTickLength, minorTickPosition, minorTickWidth, minPadding, minRange,
+		minorGridLineColor, minorGridLineWidth, minorTickColor, minorTickInterval,
+		//minorTickLength, minorTickPosition, minorTickWidth, minPadding, minRange,
 		offset, opposite, reversed, showFirstLabel, showLastLabel, startOfWeek, startOnTick, tickColor,
-		//tickInterval,
-		tickLength, tickmarkPlacement, tickPixelInterval, tickPosition, tickWidth, type;
+		tickInterval, tickLength, tickmarkPlacement, tickPixelInterval, tickPosition, tickWidth, type;
 
 		String toString;
 
@@ -159,6 +158,14 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		getStateHelper().put(PropertyKeys.minorTickColor, _minorTickColor);
 		handleAttribute("minorTickColor", _minorTickColor);
 	}
+
+	public java.lang.String getMinorTickInterval() {
+		return (java.lang.String) getStateHelper().eval(PropertyKeys.minorTickInterval, null);
+	}
+	public void setMinorTickInterval(java.lang.String _minorTickInterval) {
+		getStateHelper().put(PropertyKeys.minorTickInterval, _minorTickInterval);
+		handleAttribute("minorTickInterval", _minorTickInterval);
+	}
 	
 	public java.lang.String getOffset() {
 		return (java.lang.String) getStateHelper().eval(PropertyKeys.offset, null);
@@ -222,6 +229,14 @@ public class UIXAxisComponent extends AbstractUIComponent {
 	public void setTickColor(java.lang.String _tickColor) {
 		getStateHelper().put(PropertyKeys.tickColor, _tickColor);
 		handleAttribute("tickColor", _tickColor);
+	}
+	
+	public java.lang.String getTickInterval() {
+		return (java.lang.String) getStateHelper().eval(PropertyKeys.tickInterval, null);
+	}
+	public void setTickInterval(java.lang.String _tickInterval) {
+		getStateHelper().put(PropertyKeys.tickInterval, _tickInterval);
+		handleAttribute("tickInterval", _tickInterval);
 	}
 	
 	public java.lang.String getTickLength() {
@@ -302,6 +317,7 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.minorGridLineColor.name(), getMinorGridLineColor(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.minorGridLineWidth.name(), getMinorGridLineWidth(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.minorTickColor.name(), getMinorTickColor(), updateFirstAttribute(dataBuffer.toString())));
+		dataBuffer.append(writeAttribute(PropertyKeys.minorTickInterval.name(), getMinorTickInterval(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.offset.name(), getOffset(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.opposite.name(), getOpposite(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.reversed.name(), getReversed(), updateFirstAttribute(dataBuffer.toString())));
@@ -310,11 +326,13 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.startOfWeek.name(), getStartOfWeek(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.startOnTick.name(), getStartOnTick(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.tickColor.name(), getTickColor(), updateFirstAttribute(dataBuffer.toString())));
+		dataBuffer.append(writeAttribute(PropertyKeys.tickInterval.name(), getTickInterval(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.tickLength.name(), getTickLength(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.tickmarkPlacement.name(), getTickmarkPlacement(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.tickPixelInterval.name(), getTickPixelInterval(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.tickPosition.name(), getTickPosition(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.tickWidth.name(), getTickWidth(), updateFirstAttribute(dataBuffer.toString())));
+		dataBuffer.append(writeAttribute(PropertyKeys.type.name(), getType(), updateFirstAttribute(dataBuffer.toString())));
 		return dataBuffer.toString();
 	}
 	
