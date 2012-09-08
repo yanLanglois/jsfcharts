@@ -76,7 +76,7 @@ public class UISerie extends AbstractUIData {
 //				{name: 'Jane',data: [1, 0, 4]}, {name: 'John',data: [5, 7, 3]}]
 			}
 			data = data + "]";
-			System.out.println("data : " + data);
+//			System.out.println("data : " + data);
 		}
 		ResponseWriter writer = context.getResponseWriter();
 		writer.write(data);
