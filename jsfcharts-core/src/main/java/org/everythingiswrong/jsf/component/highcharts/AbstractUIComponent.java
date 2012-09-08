@@ -42,17 +42,15 @@ public abstract class AbstractUIComponent extends UIComponentBase {
 				resultat += getDataFromTable((List<?>) propertyValue);
 			} else if (propertyValue instanceof String) {
 				// Add cote for Js String
-				try {
-					Number number = NumberUtils.createNumber((String) propertyValue);
-					resultat += propertyValue.toString();
-				} catch (NumberFormatException e) {
-					if (STYLE.equals(propertyName)) {
-						resultat += "{" + propertyValue.toString().replaceAll(";", ",") + "}";
-						System.err.println("resultat : " + resultat);
-					} else {
-						resultat += "'" + propertyValue.toString() + "'";
+				if (((String) propertyValue).trim().matches("^#[0-9A-Fa-f]{6}$")) {	// if given color is like #000000
+					resultat += computeAttributeForJs(propertyName, propertyValue);
+				} else {
+					try {
+						Number number = NumberUtils.createNumber((String) propertyValue);
+						resultat += propertyValue.toString();
+					} catch (NumberFormatException e) {
+						resultat += computeAttributeForJs(propertyName, propertyValue);
 					}
-					
 				}
 				
 			} else {
@@ -81,6 +79,17 @@ public abstract class AbstractUIComponent extends UIComponentBase {
 	protected boolean updateFirstAttribute(String data) {
 		firstAttribute = firstAttribute && (data == null || data.length() == 0); 
 		return firstAttribute;
+	}
+	
+	private String computeAttributeForJs(String propertyName, Object propertyValue) {
+		String resultat;
+		if (STYLE.equals(propertyName)) {
+			resultat = "{" + propertyValue.toString().replaceAll(";", ",") + "}";
+//			System.err.println("resultat : " + resultat);
+		} else {
+			resultat = "'" + propertyValue.toString() + "'";
+		}
+		return resultat;
 	}
 	
 }
