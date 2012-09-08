@@ -831,6 +831,85 @@ Defaults to null.]]></description>
 			<required>false</required>
 			<type>java.lang.Boolean</type>
 		</attribute>
+		<attribute>
+			<description><![CDATA[Enable or disable the initial animation when a series is displayed. Since version 2.1, the animation can be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see #chart => animation and the animation parameter under the API methods. The following properties are supported:
+
+duration
+    The duration of the animation in milliseconds.
+easing
+    When using jQuery as the general framework, the easing can be set to linear or swing. More easing functions are available with the use of jQuery plug-ins, most notably the jQuery UI suite. See the jQuery docs. When using MooToos as the general framework, use the property name transition instead of easing.
+
+Defaults to true.
+Try it: Animation disabled, slower animation, easing "easeOutBounce" through jQuery UI. ]]></description>
+			<name>animation</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the options.colors array.
+Try it: General plot option, one specific series, area color ]]></description>
+			<name>color</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to connect a graph line across null points. Defaults to false.
+Try it: False by default, true ]]></description>
+			<name>connectNulls</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[When the series contains less points than the crop threshold, all points are drawn, event if the points fall outside the visible plot area at the current zoom. The advantage of drawing all points (including markers and columns), is that animation is performed on updates. On the other hand, when the series contains more points than the crop threshold, the series data is cropped to only contain points that fall within the plot area. The advantage of cropping away invisible points is to increase performance on large series. Defaults to 300.]]></description>
+			<name>cropThreshold</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[You can set the cursor to "pointer" if you have click events attached to the series, to signal to the user that the points and lines can be clicked. Defaults to ''.
+Try it: Pointer cursor on line graph, on columns, on scatter markers ]]></description>
+			<name>cursor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A name for the dash style to use for the graph. Applies only to series type having a graph, like line, spline, area and scatter in case it has a lineWidth. The value for the dashStyle include:
+
+    Solid
+    ShortDash
+    ShortDot
+    ShortDashDot
+    ShortDashDotDot
+    Dot
+    Dash
+    LongDash
+    DashDot
+    LongDashDot
+    LongDashDotDot
+
+Defaults to null.]]></description>
+			<name>dashStyle</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance. Defaults to true.]]></description>
+			<name>enableMouseTracking</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Pixel with of the graph line. Defaults to 2.]]></description>
+			<name>lineWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[If no x values are given for the points in a series, pointStart defines on what value to start. For example, if a series contains one yearly value starting from 1945, set pointStart to 1945. Defaults to 0.]]></description>
+			<name>pointStart</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
 	</tag>
 	<tag>
 		<tag-name>xlabels</tag-name>
