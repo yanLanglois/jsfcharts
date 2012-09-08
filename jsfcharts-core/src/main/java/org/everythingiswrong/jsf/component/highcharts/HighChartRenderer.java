@@ -78,8 +78,6 @@ public class HighChartRenderer extends Renderer {
 		writer.write("},");
 	}
 	
-	
-	
 	@Override
 	public void encodeEnd(FacesContext context, UIComponent component) throws IOException {
 		ResponseWriter writer = context.getResponseWriter();
