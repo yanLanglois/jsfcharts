@@ -19,7 +19,7 @@ public class UITooltip extends AbstractUIComponent {
 	
 	protected enum PropertyKeys {
 
-		borderColor, borderRadius, borderWidth, valueDecimals, valuePrefix, valueSuffix, shared;
+		borderColor, borderRadius, borderWidth, crosshairs, valueDecimals, valuePrefix, valueSuffix, shared;
 
 		String toString;
 
@@ -48,6 +48,14 @@ public class UITooltip extends AbstractUIComponent {
 	public void setBorderRadius(java.lang.String _borderRadius) {
 		getStateHelper().put(PropertyKeys.borderRadius, _borderRadius);
 		handleAttribute("borderRadius", _borderRadius);
+	}
+	
+	public java.lang.String getCrosshairs() {
+		return (java.lang.String) getStateHelper().eval(PropertyKeys.crosshairs, null);
+	}
+	public void setCrosshairs(java.lang.String _crosshairs) {
+		getStateHelper().put(PropertyKeys.crosshairs, _crosshairs);
+		handleAttribute("crosshairs", _crosshairs);
 	}
 	
 	public java.lang.String getBorderWidth() {
@@ -109,6 +117,7 @@ public class UITooltip extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.borderColor.name(), getBorderColor(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.borderRadius.name(), getBorderRadius(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.borderWidth.name(), getBorderWidth(), updateFirstAttribute(dataBuffer.toString())));
+		dataBuffer.append(writeAttribute(PropertyKeys.crosshairs.name(), getCrosshairs(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.valueDecimals.name(), getValueDecimals(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.valuePrefix.name(), getValuePrefix(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.valueSuffix.name(), getValueSuffix(), updateFirstAttribute(dataBuffer.toString())));

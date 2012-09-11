@@ -13,6 +13,7 @@ import org.everythingiswrong.jsf.component.highcharts.utils.NumberUtils;
 public abstract class AbstractUIComponent extends UIComponentBase {
 
 	final static private String STYLE = "style";
+	final static private String CROSSHAIRS = "crosshairs";
 	
 	public void handleAttribute(String name, Object value) {
 		List<String> setAttributes = (List<String>) this.getAttributes().get("javax.faces.component.UIComponentBase.attributesThatAreSet");
@@ -86,6 +87,8 @@ public abstract class AbstractUIComponent extends UIComponentBase {
 		if (STYLE.equals(propertyName)) {
 			resultat = "{" + propertyValue.toString().replaceAll(";", ",") + "}";
 //			System.err.println("resultat : " + resultat);
+		} else if (CROSSHAIRS.equals(propertyName)) {
+			resultat = propertyValue.toString();
 		} else {
 			resultat = "'" + propertyValue.toString() + "'";
 		}
