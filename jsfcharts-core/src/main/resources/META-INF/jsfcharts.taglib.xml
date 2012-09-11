@@ -790,6 +790,12 @@ Defaults to null.]]></description>
 			<component-type>org.everythingiswrong.jsf.chart.Tooltip</component-type>
 		</component>
 		<attribute>
+			<description><![CDATA[The radius of the rounded border corners. Defaults to 5.]]></description>
+			<name>borderRadius</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
 			<description><![CDATA[How many decimals to show in each series' y value. This is overridable in each series' tooltip options object. The default is to preserve all decimals.]]></description>
 			<name>valueDecimals</name>
 			<required>false</required>

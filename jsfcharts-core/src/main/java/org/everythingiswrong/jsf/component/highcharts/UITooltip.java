@@ -19,7 +19,7 @@ public class UITooltip extends AbstractUIComponent {
 	
 	protected enum PropertyKeys {
 
-		valueDecimals, valuePrefix, valueSuffix, shared;
+		borderRadius, valueDecimals, valuePrefix, valueSuffix, shared;
 
 		String toString;
 
@@ -32,6 +32,14 @@ public class UITooltip extends AbstractUIComponent {
 		public String toString() {
 			return ((this.toString != null) ? this.toString : super.toString());
 		}
+	}
+	
+	public java.lang.String getBorderRadius() {
+		return (java.lang.String) getStateHelper().eval(PropertyKeys.borderRadius, null);
+	}
+	public void setBorderRadius(java.lang.String _borderRadius) {
+		getStateHelper().put(PropertyKeys.borderRadius, _borderRadius);
+		handleAttribute("borderRadius", _borderRadius);
 	}
 	
 	public java.lang.String getValueDecimals() {
@@ -82,6 +90,7 @@ public class UITooltip extends AbstractUIComponent {
 	protected String getData() {
 		StringBuffer dataBuffer = new StringBuffer();
 		
+		dataBuffer.append(writeAttribute(PropertyKeys.borderRadius.name(), getBorderRadius(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.valueDecimals.name(), getValueDecimals(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.valuePrefix.name(), getValuePrefix(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.valueSuffix.name(), getValueSuffix(), updateFirstAttribute(dataBuffer.toString())));
