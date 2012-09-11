@@ -802,6 +802,12 @@ Defaults to null.]]></description>
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
+			<description><![CDATA[The pixel width of the tooltip border. Defaults to 2.]]></description>
+			<name>borderWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
 			<description><![CDATA[How many decimals to show in each series' y value. This is overridable in each series' tooltip options object. The default is to preserve all decimals.]]></description>
 			<name>valueDecimals</name>
 			<required>false</required>
