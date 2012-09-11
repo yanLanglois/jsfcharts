@@ -790,6 +790,12 @@ Defaults to null.]]></description>
 			<component-type>org.everythingiswrong.jsf.chart.Tooltip</component-type>
 		</component>
 		<attribute>
+			<description><![CDATA[The color of the tooltip border. When null, the border takes the color of the corresponding series or point. Defaults to "auto".]]></description>
+			<name>borderColor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
 			<description><![CDATA[The radius of the rounded border corners. Defaults to 5.]]></description>
 			<name>borderRadius</name>
 			<required>false</required>
