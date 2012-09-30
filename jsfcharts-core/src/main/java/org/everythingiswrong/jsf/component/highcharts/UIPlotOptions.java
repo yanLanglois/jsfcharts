@@ -128,7 +128,6 @@ public class UIPlotOptions extends AbstractUIComponent {
 		}
 		writer.append(type).append(": {");
 		writer.append(getData());
-		setFirstAttribute(false);
 	}
 	
 	@Override
