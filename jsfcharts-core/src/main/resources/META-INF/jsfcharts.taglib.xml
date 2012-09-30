@@ -853,12 +853,6 @@ Defaults to null. Defaults to null.]]></description>
 		<component>
 			<component-type>org.everythingiswrong.jsf.chart.PlotOptions</component-type>
 		</component>
-	</tag>
-	<tag>
-		<tag-name>seriesOptions</tag-name>
-		<component>
-			<component-type>org.everythingiswrong.jsf.chart.SeriesOptions</component-type>
-		</component>
 		<attribute>
 			<description><![CDATA[Allow this series' points to be selected by clicking on the markers, bars or pie slices. Defaults to false.]]></description>
 			<name>allowPointSelect</name>

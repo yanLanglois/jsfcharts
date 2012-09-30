@@ -72,7 +72,11 @@ public class UISerie extends AbstractUIData {
 				if (i > 0) {
 					data = data + ",";
 				}
-				data = data + ((Number) numberTab[i]).toString();
+				if (numberTab[i] != null) {
+					data = data + ((Number) numberTab[i]).toString();
+				} else {
+					data = data + "null";
+				}
 //				{name: 'Jane',data: [1, 0, 4]}, {name: 'John',data: [5, 7, 3]}]
 			}
 			data = data + "]";

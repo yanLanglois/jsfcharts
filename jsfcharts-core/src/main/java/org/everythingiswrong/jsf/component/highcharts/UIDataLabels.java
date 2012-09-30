@@ -47,12 +47,12 @@ public class UIDataLabels extends UIxLabels {
 	public void encodeBegin(FacesContext context) throws IOException {
 		UIComponent parent = getParent();
 		boolean isFirstAttribute = false;
-		if (parent instanceof UISeriesOptions) {
-			AbstractUIComponent new_name = (UISeriesOptions) parent;
+		if (parent instanceof UIPlotOptions) {
+			AbstractUIComponent new_name = (UIPlotOptions) parent;
 			isFirstAttribute = new_name.isFirstAttribute();
 			new_name.setFirstAttribute(false);
 		} else {
-			throw new IllegalAccessError("Parent of " + getClass() + " must be " + UISeriesOptions.class);
+			throw new IllegalAccessError("Parent of " + getClass() + " must be " + UIPlotOptions.class);
 		}
 		
 		StringBuffer dataBuffer = new StringBuffer();
@@ -74,7 +74,7 @@ public class UIDataLabels extends UIxLabels {
 	
 	protected String getData() {
 		StringBuffer dataBuffer = new StringBuffer();
-		
+
 		dataBuffer.append(writeAttribute(PropertyKeys.shadow.name(), getShadow(), updateFirstAttribute(dataBuffer.toString())));
 		
 		return dataBuffer.toString();

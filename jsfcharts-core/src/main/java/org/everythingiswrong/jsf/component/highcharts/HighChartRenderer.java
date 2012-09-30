@@ -55,7 +55,7 @@ public class HighChartRenderer extends Renderer {
 		writer.write("$(document).ready(function() { " + chartJsName + " = new Highcharts.Chart({ ");
 		writer.write("chart: {renderTo: '" +  clientId + "'");
 		if (highChart.getType() != null) {
-			writer.write(", type : " + highChart.getType());
+			writer.write(", type : \'" + highChart.getType() + "\'");
 		}
 		if (highChart.getWitdh() != null) {
 			writer.write(", width : " + highChart.getWitdh());
