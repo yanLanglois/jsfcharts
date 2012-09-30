@@ -32,33 +32,24 @@
          	<jsfcharts:title text="Logarithmic axis demo"></jsfcharts:title>
          	<jsfcharts:xAxis tickInterval="1"></jsfcharts:xAxis>
          	<jsfcharts:yAxis type="logarithmic" minorTickInterval="0.1"></jsfcharts:yAxis>
+         	<jsfcharts:plotOptions>
+         		<jsfcharts:dataLabels rotation="-15" enabled="true" style="color: '#000000';fontWeight: 'bold'" />
+         	</jsfcharts:plotOptions>
+         	
          	<jsfcharts:series>
          		<jsfcharts:serie label="log" value="#{logarithmicBean.data}"></jsfcharts:serie>
          	</jsfcharts:series>
          </jsfcharts:chart>
          
-         <jsfcharts:chart id="test2" width="600" marginRight="130" marginBottom="25">
-         	<jsfcharts:title text="Monthly Average Temperature" />
-         	<jsfcharts:subtitle text="Source: WorldClimate.com" />
-         	<jsfcharts:xAxis categories="#{chartBean.abscisse}" >
-         		<jsfcharts:xlabels style="color: '#0000FF';fontWeight: 'bold'" />
-         	</jsfcharts:xAxis>
-         	<jsfcharts:plotOptions>
-       			<jsfcharts:seriesOptions>
-        			<jsfcharts:dataLabels enabled="true" style="color: '#00FF00';fontWeight: 'bold'" />
-        		</jsfcharts:seriesOptions>
-       		</jsfcharts:plotOptions>
+         <jsfcharts:chart id="area" type="area">
+         	<jsfcharts:title text="US and USSR nuclear stockpiles" />
+         	<jsfcharts:plotOptions pointStart="1940" />
          	<jsfcharts:yAxis>
-         		<jsfcharts:title text="Temperature (&#730;C)" />
+         		<jsfcharts:title text="Nuclear weapon states" />
          	</jsfcharts:yAxis>
-         	<jsfcharts:legend layout="vertical" align="right" verticalAlign="top" x="-10" y="100" borderWidth="0"/>
-         	<jsfcharts:tooltip valueSuffix="&#730;C" />
          	<jsfcharts:series>
-	         	<jsfcharts:serie label="Tokyo" value="#{chartBean.tokyo}" >
-	         	</jsfcharts:serie>
-	         	<jsfcharts:serie label="New York" value="#{chartBean.newYork}" />
-	         	<jsfcharts:serie label="Berlin" value="#{chartBean.berlin}" />
-	         	<jsfcharts:serie label="London" value="#{chartBean.london}" />
+	         	<jsfcharts:serie label="USA" value="#{areaBean.usa}" />
+	         	<jsfcharts:serie label="USSR/Rusia" value="#{areaBean.ussr}" />
          	</jsfcharts:series>
          		
          	<jsfcharts:credits text="Yan Langlois" href="http://everythingiswrong.free.fr" />
