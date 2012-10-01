@@ -9,7 +9,11 @@
    <ui:define name="content">
       <jsfcharts:chart id="area" type="area" width="600">
          	<jsfcharts:title text="US and USSR nuclear stockpiles" />
-         	<jsfcharts:plotOptions pointStart="1940" />
+         	<jsfcharts:plotOptions pointStart="1940" >
+         		<jsfcharts:marker enabled="false">
+         			<jsfcharts:markerState state="hover" enabled="true" />
+         		</jsfcharts:marker>
+         	</jsfcharts:plotOptions>
          	<jsfcharts:yAxis>
          		<jsfcharts:title text="Nuclear weapon states" />
          	</jsfcharts:yAxis>
