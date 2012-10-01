@@ -148,7 +148,7 @@ public class UIPlotOptions extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.enableMouseTracking.name(), getEnableMouseTracking(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.lineWidth.name(), getLineWidth(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.pointStart.name(), getPointStart(), updateFirstAttribute(dataBuffer.toString())));
-		
+		updateFirstAttribute(dataBuffer.toString());
 		return dataBuffer.toString();
 	}
 }

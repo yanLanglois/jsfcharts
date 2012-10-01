@@ -205,7 +205,7 @@ public class UILegend extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.width.name(), getWidth(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.x.name(), getX(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.y.name(), getY(), updateFirstAttribute(dataBuffer.toString())));
-		
+		updateFirstAttribute(dataBuffer.toString());
 		return dataBuffer.toString();
 	}
 }

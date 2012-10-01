@@ -122,7 +122,7 @@ public class UITooltip extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.valuePrefix.name(), getValuePrefix(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.valueSuffix.name(), getValueSuffix(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.shared.name(), getShared(), updateFirstAttribute(dataBuffer.toString())));
-		
+		updateFirstAttribute(dataBuffer.toString());
 		return dataBuffer.toString();
 	}
 	

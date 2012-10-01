@@ -76,7 +76,7 @@ public class UIDataLabels extends UIxLabels {
 		StringBuffer dataBuffer = new StringBuffer();
 
 		dataBuffer.append(writeAttribute(PropertyKeys.shadow.name(), getShadow(), updateFirstAttribute(dataBuffer.toString())));
-		
+		updateFirstAttribute(dataBuffer.toString());
 		return dataBuffer.toString();
 	}
 }

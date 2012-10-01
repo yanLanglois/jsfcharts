@@ -136,7 +136,7 @@ public class UIxLabels extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.style.name(), getStyle(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.x.name(), getX(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.y.name(), getY(), updateFirstAttribute(dataBuffer.toString())));
-		
+		updateFirstAttribute(dataBuffer.toString());
 		return dataBuffer.toString();
 	}
 }
