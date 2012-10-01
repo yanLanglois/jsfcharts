@@ -7,8 +7,6 @@
    xmlns:jsfcharts="http://everythingiswrong.org/jsfcharts"
    template="/WEB-INF/templates/default.xhtml">
    <ui:define name="content">
-      <h:form id="bv">
-      
          <jsfcharts:chart id="test" width="600" marginRight="130" marginBottom="25">
          	<jsfcharts:title text="Monthly Average Temperature" />
          	<jsfcharts:subtitle text="Source: WorldClimate.com" />
@@ -41,20 +39,5 @@
          	</jsfcharts:series>
          </jsfcharts:chart>
          
-         <jsfcharts:chart id="area" type="area">
-         	<jsfcharts:title text="US and USSR nuclear stockpiles" />
-         	<jsfcharts:plotOptions pointStart="1940" />
-         	<jsfcharts:yAxis>
-         		<jsfcharts:title text="Nuclear weapon states" />
-         	</jsfcharts:yAxis>
-         	<jsfcharts:series>
-	         	<jsfcharts:serie label="USA" value="#{areaBean.usa}" />
-	         	<jsfcharts:serie label="USSR/Rusia" value="#{areaBean.ussr}" />
-         	</jsfcharts:series>
-         		
-         	<jsfcharts:credits text="Yan Langlois" href="http://everythingiswrong.free.fr" />
-         </jsfcharts:chart>
-         
-      </h:form>
    </ui:define>
 </ui:composition>
