@@ -15,6 +15,14 @@ public class AreaBean {
 	private Integer[] jane = new Integer[] {2, -2, -3, 2, 1};
 	private Integer[] joe = new Integer[] {3, 4, 4, -2, 5};
 	
+	private String[] stackedCategorie = new String[] {"1750", "1800", "1850", "1900", "1950", "1999", "2050"};
+	private Integer[] asia = new Integer[] {502, 635, 809, 947, 1402, 3634, 5268};
+	private Integer[] africa = new Integer[] {106, 107, 111, 133, 221, 767, 1766};
+	private Integer[] europe = new Integer[] {163, 203, 276, 408, 547, 729, 628};
+	private Integer[] america = new Integer[] {18, 31, 54, 156, 339, 818, 1201};
+	private Integer[] oceanie = new Integer[] {2, 2, 2, 6, 13, 30, 46};
+	
+	
 	@PostConstruct
 	public void initialize() {
 		usa = new Integer[] {null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
@@ -55,5 +63,31 @@ public class AreaBean {
 	public Integer[] getJoe() {
 		return joe;
 	}
+
+	public String[] getStackedCategorie() {
+		return stackedCategorie;
+	}
+
+	public Integer[] getAsia() {
+		return asia;
+	}
+
+	public Integer[] getAfrica() {
+		return africa;
+	}
+
+	public Integer[] getEurope() {
+		return europe;
+	}
+
+	public Integer[] getAmerica() {
+		return america;
+	}
+
+	public Integer[] getOceanie() {
+		return oceanie;
+	}
+	
+	
 	
 }

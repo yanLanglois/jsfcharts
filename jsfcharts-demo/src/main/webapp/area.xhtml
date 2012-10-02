@@ -35,5 +35,22 @@
          		<jsfcharts:serie label="Joe" value="#{areaBean.joe}" />
          	</jsfcharts:series>
          </jsfcharts:chart>
+         
+         <jsfcharts:chart type="area">
+         	<jsfcharts:title text="Historic and Estimated Worldwide Population Growth by Region" />
+         	<jsfcharts:subtitle text="Source: Wikipedia.org" />
+         	<jsfcharts:xAxis categories="#{areaBean.stackedCategorie}" />
+         	<jsfcharts:credits enabled="false" />
+         	<jsfcharts:plotOptions stacking="normal">
+         		<jsfcharts:marker lineWidth="1" lineColor="#666666" />
+         	</jsfcharts:plotOptions>
+         	<jsfcharts:series>
+         		<jsfcharts:serie label="Asia" value="#{areaBean.asia}" />
+         		<jsfcharts:serie label="Africa" value="#{areaBean.africa}" />
+         		<jsfcharts:serie label="Europe" value="#{areaBean.europe}" />
+         		<jsfcharts:serie label="America" value="#{areaBean.america}" />
+         		<jsfcharts:serie label="Oceania" value="#{areaBean.oceanie}" />
+         	</jsfcharts:series>
+         </jsfcharts:chart>
    </ui:define>
 </ui:composition>

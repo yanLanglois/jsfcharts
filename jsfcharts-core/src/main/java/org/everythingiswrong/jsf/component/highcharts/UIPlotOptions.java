@@ -20,7 +20,7 @@ public class UIPlotOptions extends AbstractUIComponent {
 
 		allowPointSelect, animation, color, connectNulls, cropThreshold, cursor, dashStyle, enableMouseTracking,
 		//id,
-		lineWidth, pointStart;
+		lineWidth, pointStart, stacking;
 
 		String toString;
 
@@ -115,6 +115,14 @@ public class UIPlotOptions extends AbstractUIComponent {
 		handleAttribute("pointStart", _pointStart);
 	}
 	
+	public java.lang.String getStacking() {
+		return (java.lang.String) getStateHelper().eval(PropertyKeys.stacking, null);
+	}
+	public void setStacking(java.lang.String _stacking) {
+		getStateHelper().put(PropertyKeys.stacking, _stacking);
+		handleAttribute("stacking", _stacking);
+	}
+	
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException {
 		if (!(getParent() instanceof UIHighChart)) {
@@ -148,6 +156,7 @@ public class UIPlotOptions extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.enableMouseTracking.name(), getEnableMouseTracking(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.lineWidth.name(), getLineWidth(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.pointStart.name(), getPointStart(), updateFirstAttribute(dataBuffer.toString())));
+		dataBuffer.append(writeAttribute(PropertyKeys.stacking.name(), getStacking(), updateFirstAttribute(dataBuffer.toString())));
 		updateFirstAttribute(dataBuffer.toString());
 		return dataBuffer.toString();
 	}
