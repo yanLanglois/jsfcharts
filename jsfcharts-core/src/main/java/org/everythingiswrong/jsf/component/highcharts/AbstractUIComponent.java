@@ -1,5 +1,6 @@
 package org.everythingiswrong.jsf.component.highcharts;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -39,6 +40,9 @@ public abstract class AbstractUIComponent extends UIComponentBase {
 			if (propertyValue instanceof Arrays) {
 				Arrays new_name = (Arrays) propertyValue;
 				resultat += getDataFromTable(Arrays.asList(new_name));
+			} else if (propertyValue instanceof Object[]) {
+				List<Object> list = new ArrayList<Object>(Arrays.asList((Object[]) propertyValue));
+				resultat += getDataFromTable(list);
 			} else if (propertyValue instanceof List<?>) {
 				resultat += getDataFromTable((List<?>) propertyValue);
 			} else if (propertyValue instanceof String) {
