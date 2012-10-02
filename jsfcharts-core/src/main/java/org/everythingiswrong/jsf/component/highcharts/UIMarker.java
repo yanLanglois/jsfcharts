@@ -103,6 +103,7 @@ public class UIMarker extends AbstractUIMarker {
 	public void encodeEnd(FacesContext context) throws IOException {
 		ResponseWriter writer = context.getResponseWriter();
 		writer.append("}");	// End of states
+		setFirstAttribute(false); // Because the first attribute is "states: {}"
 		writer.append(super.getData());
 		writer.append(getData());
 		writer.append("}");
