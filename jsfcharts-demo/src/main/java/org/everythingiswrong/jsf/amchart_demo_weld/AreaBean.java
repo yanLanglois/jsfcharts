@@ -10,6 +10,11 @@ public class AreaBean {
 	private Integer[] usa;
 	private Integer[] ussr;
 	
+	private String[] categorie = new String[] {"Apples", "Oranges", "Pears", "Grapes", "Bananas"};
+	private Integer[] john = new Integer[] {5, 3, 4, 7, 2};
+	private Integer[] jane = new Integer[] {2, -2, -3, 2, 1};
+	private Integer[] joe = new Integer[] {3, 4, 4, -2, 5};
+	
 	@PostConstruct
 	public void initialize() {
 		usa = new Integer[] {null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
@@ -35,4 +40,20 @@ public class AreaBean {
 		return ussr;
 	}
 
+	public String[] getCategorie() {
+		return categorie;
+	}
+
+	public Integer[] getJohn() {
+		return john;
+	}
+
+	public Integer[] getJane() {
+		return jane;
+	}
+
+	public Integer[] getJoe() {
+		return joe;
+	}
+	
 }

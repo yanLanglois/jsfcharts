@@ -25,5 +25,15 @@
          	<jsfcharts:credits text="Yan Langlois" href="http://everythingiswrong.free.fr" />
          </jsfcharts:chart>
          
+         <jsfcharts:chart type="area">
+         	<jsfcharts:title text="Area chart with negative values" />
+         	<jsfcharts:xAxis categories="#{areaBean.categorie}" />
+         	<jsfcharts:credits enabled="false" />
+         	<jsfcharts:series>
+         		<jsfcharts:serie label="John" value="#{areaBean.john}" />
+         		<jsfcharts:serie label="Jane" value="#{areaBean.jane}" />
+         		<jsfcharts:serie label="Joe" value="#{areaBean.joe}" />
+         	</jsfcharts:series>
+         </jsfcharts:chart>
    </ui:define>
 </ui:composition>
