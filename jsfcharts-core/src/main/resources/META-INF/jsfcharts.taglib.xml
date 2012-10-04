@@ -325,6 +325,12 @@ Defaults to [].]]></description>
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
+			<description><![CDATA[The maximum value of the axis. If null, the max value is automatically calculated. If the endOnTick option is true, the max value might be rounded up. The actual maximum value is also influenced by chart.alignTicks. Defaults to null.]]></description>
+			<name>max</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
 			<description><![CDATA[The minimum value of the axis. If null the min value is automatically calculated. If the startOnTick option is true, the min value might be rounded down. Defaults to null.]]></description>
 			<name>min</name>
 			<required>false</required>
@@ -546,6 +552,12 @@ Defaults to [].]]></description>
 		<attribute>
 			<description><![CDATA[The width of the line marking the axis itself. Defaults to 1.]]></description>
 			<name>lineWidth</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The maximum value of the axis. If null, the max value is automatically calculated. If the endOnTick option is true, the max value might be rounded up. The actual maximum value is also influenced by chart.alignTicks. Defaults to null.]]></description>
+			<name>max</name>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>

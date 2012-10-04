@@ -22,7 +22,9 @@ public class UIXAxisComponent extends AbstractUIComponent {
 
 		allowDecimals, alternateGridColor, categories, dateTimeLabelFormats, endOnTick, gridLineColor, gridLineDashStyle, gridLineWidth, lineColor,
 		lineWidth,
-		//linkedTo, max, maxPadding,  
+		//linkedTo, 
+		max, 
+		//maxPadding,  
 		min, minorGridLineColor, minorGridLineWidth, minorTickColor, minorTickInterval,
 		//minorTickLength, minorTickPosition, minorTickWidth, minPadding, minRange,
 		offset, opposite, reversed, showFirstLabel, showLastLabel, startOfWeek, startOnTick, tickColor,
@@ -133,6 +135,14 @@ public class UIXAxisComponent extends AbstractUIComponent {
 	public void setLineWidth(java.lang.String _lineWidth) {
 		getStateHelper().put(PropertyKeys.lineWidth, _lineWidth);
 		handleAttribute("lineWidth", _lineWidth);
+	}
+	
+	public java.lang.String getMax() {
+		return (java.lang.String) getStateHelper().eval(PropertyKeys.max, null);
+	}
+	public void setMax(java.lang.String _max) {
+		getStateHelper().put(PropertyKeys.max, _max);
+		handleAttribute("max", _max);
 	}
 	
 	public java.lang.String getMin() {
@@ -322,6 +332,7 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.gridLineWidth.name(), getGridLineWidth(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.lineColor.name(), getLineColor(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.lineWidth.name(), getLineWidth(), updateFirstAttribute(dataBuffer.toString())));
+		dataBuffer.append(writeAttribute(PropertyKeys.max.name(), getMax(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.min.name(), getMin(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.minorGridLineColor.name(), getMinorGridLineColor(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.minorGridLineWidth.name(), getMinorGridLineWidth(), updateFirstAttribute(dataBuffer.toString())));
