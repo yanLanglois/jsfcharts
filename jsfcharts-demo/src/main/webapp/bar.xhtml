@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:e="http://example.com/test"
+   xmlns:jsfcharts="http://everythingiswrong.org/jsfcharts"
+   template="/WEB-INF/templates/default.xhtml">
+   <ui:define name="content">
+         
+         <jsfcharts:chart type="bar" width="600">
+         	<jsfcharts:title text="Historic World Population by Region" />
+         	<jsfcharts:subtitle text="Source: Wikipedia.org" />
+         	<jsfcharts:legend layout="vertical" 
+         		x="-100" y="100"
+         		align="right" verticalAlign="top" 
+         		floating="true" borderWidth="1" 
+         		backgroundColor="#FFFFFF" shadow="true" />
+         	<jsfcharts:yAxis>
+         		<jsfcharts:title text="Population (millions)" align="high"></jsfcharts:title>
+         	</jsfcharts:yAxis>
+         	<jsfcharts:xAxis categories="#{barBean.stackedCategorie}" />
+         	<jsfcharts:plotOptions>
+         		<jsfcharts:dataLabels enabled="true" />
+         	</jsfcharts:plotOptions>
+         	<jsfcharts:series>
+         		<jsfcharts:serie label="Year 1800" value="#{barBean.year1800}" />
+         		<jsfcharts:serie label="Year 1900" value="#{barBean.year1900}" />
+         		<jsfcharts:serie label="Year 2008" value="#{barBean.year2008}" />
+         	</jsfcharts:series>
+         </jsfcharts:chart>
+         
+   </ui:define>
+</ui:composition>
