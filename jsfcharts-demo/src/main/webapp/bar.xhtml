@@ -29,6 +29,21 @@
          		<jsfcharts:serie label="Year 2008" value="#{barBean.year2008}" />
          	</jsfcharts:series>
          </jsfcharts:chart>
-         
+
+		<jsfcharts:chart type="bar" width="600">
+         	<jsfcharts:title text="Stacked bar chart" />
+         	<jsfcharts:xAxis categories="#{barBean.categorie}" />
+         	<jsfcharts:legend backgroundColor="#FFFFFF" reversed="true" />
+         	<jsfcharts:plotOptions stacking="normal" />
+         	<jsfcharts:yAxis min="0">
+         		<jsfcharts:title text="Total fruit consumption"></jsfcharts:title>
+         	</jsfcharts:yAxis>
+         	<jsfcharts:series>
+         		<jsfcharts:serie label="John" value="#{barBean.john}" />
+         		<jsfcharts:serie label="Jane" value="#{barBean.jane}" />
+         		<jsfcharts:serie label="Joe" value="#{barBean.joe}" />
+         	</jsfcharts:series>
+        </jsfcharts:chart> 
+        
    </ui:define>
 </ui:composition>
