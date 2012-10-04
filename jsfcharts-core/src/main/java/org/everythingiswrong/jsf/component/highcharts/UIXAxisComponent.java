@@ -22,8 +22,8 @@ public class UIXAxisComponent extends AbstractUIComponent {
 
 		allowDecimals, alternateGridColor, categories, dateTimeLabelFormats, endOnTick, gridLineColor, gridLineDashStyle, gridLineWidth, lineColor,
 		lineWidth,
-		//linkedTo, max, maxPadding,  min,
-		minorGridLineColor, minorGridLineWidth, minorTickColor, minorTickInterval,
+		//linkedTo, max, maxPadding,  
+		min, minorGridLineColor, minorGridLineWidth, minorTickColor, minorTickInterval,
 		//minorTickLength, minorTickPosition, minorTickWidth, minPadding, minRange,
 		offset, opposite, reversed, showFirstLabel, showLastLabel, startOfWeek, startOnTick, tickColor,
 		tickInterval, tickLength, tickmarkPlacement, tickPixelInterval, tickPosition, tickWidth, type;
@@ -133,6 +133,14 @@ public class UIXAxisComponent extends AbstractUIComponent {
 	public void setLineWidth(java.lang.String _lineWidth) {
 		getStateHelper().put(PropertyKeys.lineWidth, _lineWidth);
 		handleAttribute("lineWidth", _lineWidth);
+	}
+	
+	public java.lang.String getMin() {
+		return (java.lang.String) getStateHelper().eval(PropertyKeys.min, null);
+	}
+	public void setMin(java.lang.String _min) {
+		getStateHelper().put(PropertyKeys.min, _min);
+		handleAttribute("min", _min);
 	}
 	
 	public java.lang.String getMinorGridLineColor() {
@@ -314,6 +322,7 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.gridLineWidth.name(), getGridLineWidth(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.lineColor.name(), getLineColor(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.lineWidth.name(), getLineWidth(), updateFirstAttribute(dataBuffer.toString())));
+		dataBuffer.append(writeAttribute(PropertyKeys.min.name(), getMin(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.minorGridLineColor.name(), getMinorGridLineColor(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.minorGridLineWidth.name(), getMinorGridLineWidth(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.minorTickColor.name(), getMinorTickColor(), updateFirstAttribute(dataBuffer.toString())));
@@ -333,6 +342,9 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		dataBuffer.append(writeAttribute(PropertyKeys.tickPosition.name(), getTickPosition(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.tickWidth.name(), getTickWidth(), updateFirstAttribute(dataBuffer.toString())));
 		dataBuffer.append(writeAttribute(PropertyKeys.type.name(), getType(), updateFirstAttribute(dataBuffer.toString())));
+		
+		updateFirstAttribute(dataBuffer.toString());
+		
 		return dataBuffer.toString();
 	}
 	
