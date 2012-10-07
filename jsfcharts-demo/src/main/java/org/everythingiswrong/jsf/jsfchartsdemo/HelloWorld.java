@@ -1,4 +1,4 @@
-package org.everythingiswrong.jsf.amchart_demo_weld;
+package org.everythingiswrong.jsf.jsfchartsdemo;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;

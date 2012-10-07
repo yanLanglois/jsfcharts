@@ -1,4 +1,4 @@
-package org.everythingiswrong.jsf.amchart_demo_weld;
+package org.everythingiswrong.jsf.jsfchartsdemo;
 
 import java.util.Arrays;
 
