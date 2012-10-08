@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:e="http://example.com/test"
+   xmlns:jsfcharts="http://everythingiswrong.org/jsfcharts"
+   template="/WEB-INF/templates/default.xhtml">
+   <ui:define name="content">
+         
+         <jsfcharts:chart type="column" width="600">
+         	<jsfcharts:title text="Monthly Average Rainfall" />
+         	<jsfcharts:subtitle text="Source: WorldClimate.com" />
+         	<jsfcharts:legend layout="vertical" 
+         		x="100" y="70"
+         		align="left" verticalAlign="top" 
+         		floating="true" borderWidth="1" 
+         		backgroundColor="#FFFFFF" shadow="true" />
+         	<jsfcharts:yAxis min="0">
+         		<jsfcharts:title text="Rainfall (mm)" />
+         	</jsfcharts:yAxis>
+         	<jsfcharts:xAxis categories="#{columnBean.categorie}" />
+         	<jsfcharts:plotOptions>
+         		<jsfcharts:dataLabels enabled="true" />
+         	</jsfcharts:plotOptions>
+         	<jsfcharts:series>
+         		<jsfcharts:serie label="Tokyo" value="#{columnBean.tokyo}" />
+         		<jsfcharts:serie label="New York" value="#{columnBean.newYork}" />
+         		<jsfcharts:serie label="London" value="#{columnBean.london}" />
+         		<jsfcharts:serie label="Berlin" value="#{columnBean.berlin}" />
+         	</jsfcharts:series>
+         </jsfcharts:chart>
+		
+		<jsfcharts:chart type="column">
+			<jsfcharts:title text="Column chart with negative values" />
+			<jsfcharts:xAxis categories="#{barBean.categorie}" />
+			<jsfcharts:series>
+				<jsfcharts:serie label="John" value="#{barBean.john}" />
+				<jsfcharts:serie label="Jane" value="#{barBean.jane}" />
+				<jsfcharts:serie label="Joe" value="#{barBean.joe}" />
+			</jsfcharts:series>
+			<jsfcharts:credits enabled="false" />
+		</jsfcharts:chart>
+		
+   </ui:define>
+</ui:composition>
