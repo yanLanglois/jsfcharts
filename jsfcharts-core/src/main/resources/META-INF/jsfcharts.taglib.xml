@@ -474,6 +474,13 @@ Defaults to null.]]></description>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>
+		<!-- custom -->
+		<attribute>
+			<description><![CDATA[true to create an opposite axis. Default value du false.]]></description>
+			<name>bothside</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
 	</tag>
 	
 	<tag>

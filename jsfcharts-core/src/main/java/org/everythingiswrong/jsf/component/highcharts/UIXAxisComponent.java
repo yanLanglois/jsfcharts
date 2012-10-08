@@ -28,7 +28,10 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		min, minorGridLineColor, minorGridLineWidth, minorTickColor, minorTickInterval,
 		//minorTickLength, minorTickPosition, minorTickWidth, minPadding, minRange,
 		offset, opposite, reversed, showFirstLabel, showLastLabel, startOfWeek, startOnTick, tickColor,
-		tickInterval, tickLength, tickmarkPlacement, tickPixelInterval, tickPosition, tickWidth, type;
+		tickInterval, tickLength, tickmarkPlacement, tickPixelInterval, tickPosition, tickWidth, type,
+		
+		// custom
+		bothside;
 
 		String toString;
 
@@ -188,13 +191,13 @@ public class UIXAxisComponent extends AbstractUIComponent {
 	public java.lang.String getOffset() {
 		return (java.lang.String) getStateHelper().eval(PropertyKeys.offset, null);
 	}
-	public void setOpposite(java.lang.String _opposite) {
+	public void setOpposite(java.lang.Boolean _opposite) {
 		getStateHelper().put(PropertyKeys.opposite, _opposite);
 		handleAttribute("opposite", _opposite);
 	}
 	
 	public java.lang.Boolean getOpposite() {
-		return (java.lang.Boolean) getStateHelper().eval(PropertyKeys.offset, null);
+		return (java.lang.Boolean) getStateHelper().eval(PropertyKeys.opposite, null);
 	}
 	public void setOffset(java.lang.Boolean _offset) {
 		getStateHelper().put(PropertyKeys.offset, _offset);
@@ -305,10 +308,22 @@ public class UIXAxisComponent extends AbstractUIComponent {
 		handleAttribute("type", _type);
 	}
 	
+	public java.lang.Boolean getBothside() {
+		return (java.lang.Boolean) getStateHelper().eval(PropertyKeys.bothside, null);
+	}
+	public void setBothside(java.lang.Boolean _bothside) {
+		getStateHelper().put(PropertyKeys.bothside, _bothside);
+		handleAttribute("bothside", _bothside);
+	}
+	
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException {
 		ResponseWriter writer = context.getResponseWriter();
-		writer.write(", xAxis: {");
+		if (getBothside() != null && getBothside()) {
+			writer.write(", xAxis: [{");
+		} else {
+			writer.write(", xAxis: {");
+		}
 		setFirstAttribute(true);
 	}
 	
@@ -316,6 +331,16 @@ public class UIXAxisComponent extends AbstractUIComponent {
 	public void encodeEnd(FacesContext context) throws IOException {
 		String axis = getAxisContent();
 		axis += "}";
+		if (getBothside() != null && getBothside()) {
+			if (getOpposite() != null) {
+				setOpposite(!getOpposite());
+			} else {
+				setOpposite(true);
+			}
+			axis += ", { linkedTo: 0";
+			axis += getAxisContent();
+			axis += "}]";
+		}
 		ResponseWriter writer = context.getResponseWriter();
 		writer.write(axis);
 	}
