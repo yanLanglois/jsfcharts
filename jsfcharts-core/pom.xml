@@ -53,30 +53,35 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.zeroturnaround</groupId>
-				<artifactId>jrebel-maven-plugin</artifactId>
-				<version>1.1.1</version>
-				<executions>
-					<execution>
-						<id>generate-rebel-xml</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<configuration>
-						<relativePath>../</relativePath>
-						<!-- use a custom property for specifying root directory (note the 
-							double $) set the property in JRebel configuration or as -Dmyproject.root=c:/projects/ -->
-						<rootPath>$${myproject.root}</rootPath>
-					</configuration>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.zeroturnaround</groupId>
+						<artifactId>jrebel-maven-plugin</artifactId>
+						<version>1.1.1</version>
+						<executions>
+							<execution>
+								<id>generate-rebel-xml</id>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<configuration>
+								<relativePath>../</relativePath>
+								<!-- use a custom property for specifying root directory (note the 
+									double $) set the property in JRebel configuration or as -Dmyproject.root=c:/projects/ -->
+								<rootPath>$${myproject.root}</rootPath>
+							</configuration>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
