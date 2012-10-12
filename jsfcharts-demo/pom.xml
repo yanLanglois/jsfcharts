@@ -133,7 +133,26 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<!-- Deploy on a local JBoss + activate JRebel -->
+			<id>dev</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jboss.as.plugins</groupId>
+						<artifactId>jboss-as-maven-plugin</artifactId>
+						<version>7.1.1.Final</version>
+						<executions>
+							<execution>
+								<goals><goal>deploy</goal></goals>
+								<phase>integration-test</phase>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 				<groupId>org.zeroturnaround</groupId>
 				<artifactId>jrebel-maven-plugin</artifactId>
 				<version>1.1.1</version>
@@ -155,24 +174,6 @@
 					</configuration>
 				</configuration>
 			</plugin>
-		</plugins>
-	</build>
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.jboss.as.plugins</groupId>
-						<artifactId>jboss-as-maven-plugin</artifactId>
-						<version>7.1.1.Final</version>
-						<executions>
-							<execution>
-								<goals><goal>deploy</goal></goals>
-								<phase>integration-test</phase>
-							</execution>
-						</executions>
-					</plugin>
 				</plugins>
 			</build>
 		</profile>
