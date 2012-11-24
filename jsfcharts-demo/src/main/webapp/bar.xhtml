@@ -8,7 +8,7 @@
    template="/WEB-INF/templates/default.xhtml">
    <ui:define name="content">
          
-         <jsfcharts:chart type="bar" width="600">
+         <jsfcharts:chart type="bar">
          	<jsfcharts:title text="Historic World Population by Region" />
          	<jsfcharts:subtitle text="Source: Wikipedia.org" />
          	<jsfcharts:legend layout="vertical" 
@@ -30,7 +30,7 @@
          	</jsfcharts:series>
          </jsfcharts:chart>
 
-		<jsfcharts:chart type="bar" width="600">
+		<jsfcharts:chart type="bar" >
          	<jsfcharts:title text="Stacked bar chart" />
          	<jsfcharts:xAxis categories="#{barBean.categorie}" />
          	<jsfcharts:legend backgroundColor="#FFFFFF" reversed="true" />

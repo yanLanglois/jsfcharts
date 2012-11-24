@@ -1,21 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
    xmlns:h="http://java.sun.com/jsf/html"
    xmlns:ui="http://java.sun.com/jsf/facelets">
-   <h:head>
-      <title>Java EE 6 Starter Application</title>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <h:outputStylesheet name="css/screen.css"/>
-   </h:head>
-   <h:body>
-      <div id="container">
-         <div id="content">
-         	<div id="header">
-         		<a href="home.jsf">Line</a> | <a href="area.jsf">Area</a> | <a href="bar.jsf">Bar</a> | <a href="column.jsf">Column</a>
-         	</div>
-            <div id="sidebar">
-               <h3>Find out more</h3>
+<h:head>
+   <title>JSFCharts showcase : JSF charting library</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <h:outputStylesheet name="css/screen.css" />
+</h:head>
+<h:body>
+   <div id="container">
+      <div class="dualbrand">
+         <!-- <img src="resources/gfx/dualbrand_logo.png" /> -->
+      </div>
+      <div id="content">
+      		<h1>Welcome to JSFCharts showcase!</h1>
+         <ui:insert name="content">
+                    [Template content will be inserted here]
+         </ui:insert>
+      </div>
+      <div id="aside">
+      		<h3>Find out more</h3>
+      			<p>Explore this showcase</p>
+               <ul>
+	               	<li><a href="home.jsf">Line</a></li>
+	               	<li><a href="area.jsf">Area</a></li>
+	               	<li><a href="bar.jsf">Bar</a></li>
+	               	<li><a href="column.jsf">Column</a></li>
+               </ul>
                <p>
                   This JSF component is a wrapper of the javascript library <a href="http://www.highcharts.com/" target="_blank">highcharts</a>.
                </p>
@@ -31,24 +43,23 @@
                <p>Explore JavaServer Faces.</p>
                <ul>
                   <li><a href="http://www.javaserverfaces.org" target="_blank">JSF community site</a></li>
-               </ul>
-               <!-- <p>
-                  If you have an add-on, please <a href="http://seamframework.org/Community/Forums">let us know</a> and
-                  consider <a href="http://seamframework.org/Community/Contribute">contributing</a> it back to the
-                  community!
-               </p> -->
-            </div>
-            <ui:insert name="content">
-               [Template content will be inserted here]
-            </ui:insert>
-         </div>
-         <div id="footer">
-            <h:graphicImage value="/resources/gfx/weld.png" alt="Weld logo"/>
-            <p>
-               This project was generated from a Maven archetype maintained by the Weld team.<br/>
-               Weld is the reference implementation of CDI, released under the Apache License, Version 2.0.<br/>
-            </p>
-         </div>
+               </ul><!-- 
+         <p>Learn more about JBoss Enterprise Application Platform 6.</p>
+         <ul>
+            <li><a
+               href="http://red.ht/jbeap-6-docs">Documentation</a></li>
+            <li><a href="http://red.ht/jbeap-6">Product Information</a></li>
+         </ul>
+         <p>Learn more about JBoss AS 7.</p>
+         <ul>
+            <li><a
+               href="https://docs.jboss.org/author/display/AS7/Getting+Started+Developing+Applications+Guide">Getting Started Developing Applications Guide</a></li>
+            <li><a href="http://jboss.org/jbossas">Community Project Information</a></li>
+         </ul>             -->
       </div>
-   </h:body>
+      <div id="footer">
+         <p>Visit github projet at <a href="https://github.com/yanLanglois/jsfcharts" target="_blank" >https://github.com/yanLanglois/jsfcharts</a><br/></p>
+      </div>
+   </div>
+</h:body>
 </html>
