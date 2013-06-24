@@ -32,7 +32,48 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>Welcome to Jsfcharts GitHub Pages.</h3>
-
+        
+        <p style="text-align: justify;">To download releases with Maven, add this repository to your <code>pom.xml</code> or <code>settings.xml</code> : <p>
+        
+        <pre class="prettyprint lang-xml">
+			&lt;repository&gt;
+			  &lt;id&gt;jsfcharts-repo&lt;/id&gt;
+			  &lt;name&gt;Jsfcharts Maven Repository&lt;/name&gt;
+			  &lt;url&gt;http://yanlanglois.github.io/jsfcharts/repository&lt;/url&gt;
+			  &lt;layout&gt;default&lt;/layout&gt;
+			&lt;/repository&gt;
+		</pre>
+		
+		<pre class="prettyprint lang-xml">
+			&lt;dependency&gt;
+			  &lt;grouId&gt;org.eiw&lt;/grouId&gt;
+			  &lt;artifactId&gt;jsfcharts-core&lt;/artifactId&gt;
+			  &lt;version&gt;1.0.0&lt;/version&gt;
+			&lt;/dependency&gt;
+		</pre>
+		
+		<p style="text-align: justify;">Actual releases :</p>
+		<table class="table table-bordered table-hover" style="margin: 10px auto">
+		  <thead>
+		    <tr>
+		      <th>Version</th>
+		      <th>Highcharts</th>
+		      <th>Binary</th>
+		      <th>Sources</th>
+		      <!-- <th>content</th> -->
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td>1.0.0</td>
+		      <td>v3.0.1</td>
+		      <td><a href="repository/org/eiw/jsfcharts-core/1.0.0/jsfcharts-core-1.0.0.jar">jsfcharts-core-1.0.0.jar</a></td>
+		      <td><a href="repository/org/eiw/jsfcharts-core/1.0.0/jsfcharts-core-1.0.0-sources.jar">jsfcharts-core-1.0.0-sources.jar</a></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<h3>Showcase</h3>
+		<p style="text-align: justify;">Please visit the showcase on <a href="http://showcase-jsfcharts.rhcloud.com/home.jsf" taget="_blank">OpenShift</a>.</p>
 <!-- <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
 <pre><code>$ cd your_repo_root/repo_name
