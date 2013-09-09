@@ -15,7 +15,11 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
+	<scm>
+		<url>https://github.com/yanLanglois/jsfcharts</url>
+		<connection>scm:git:https://github.com/yanLanglois/jsfcharts.git</connection>
+		<developerConnection>scm:git:https://github.com/yanLanglois/jsfcharts.git</developerConnection>
+	</scm>
 	<build>
 		<plugins>
 			<plugin>
