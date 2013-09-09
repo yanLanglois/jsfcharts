@@ -4,6 +4,8 @@ jsfcharts
 2. mvn clean integration-test
 3. firefox http://localhost:8080/jsfcharts-demo/home.jsf &
 
+Online showcase on OpenShift : http://showcase-jsfcharts.rhcloud.com/home.jsf
+
 Features
 =========
 JSF Wrapper for highcharts (http://www.highcharts.com/products/highcharts).
