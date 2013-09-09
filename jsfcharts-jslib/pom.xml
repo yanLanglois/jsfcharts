@@ -4,11 +4,11 @@
 	<parent>
 		<groupId>org.eiw</groupId>
 		<artifactId>jsfcharts</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 	<groupId>org.eiw</groupId>
 	<artifactId>jsfcharts-jslib</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>jsfcharts-jslib</name>
 	<url>http://maven.apache.org</url>
 	<properties>
